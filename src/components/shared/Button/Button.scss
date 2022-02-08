@@ -1,0 +1,21 @@
+@import "../../../styles/partials/variables";
+@import "../../../styles/partials/mixins";
+
+.button {
+  padding: 0.5rem 1rem;
+  border: 1px solid $border-color;
+  border-radius: $br;
+  min-width: 150px;
+  cursor: pointer;
+  border: none;
+  @include transition(background);
+
+  &:hover {
+    background: darken($error, 20%);
+  }
+}
+
+.button-primary {
+  background: $error;
+  color: white;
+}

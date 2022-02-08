@@ -1,0 +1,87 @@
+@import "./mixins";
+
+// ? form control
+.form-control-container {
+  position: relative;
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  outline: none;
+  padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+  border: 0.5px solid $border-color;
+  border-radius: $br;
+  @include transition(box-shadow);
+
+  &:hover {
+    box-shadow: 0px 0px 2px 1px rgba(0, 119, 255, 0.2);
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 2px 1.25px rgba(0, 119, 255, 0.5);
+  }
+
+  &::placeholder,
+  &.placeholder {
+    color: rgb(143, 143, 143);
+  }
+
+  &:disabled {
+    // here will go code when input is disabled
+  }
+}
+
+.form-control-icon-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  color: rgb(143, 143, 143);
+  @include transition(color);
+  right: 0.75rem;
+
+  &.black {
+    color: black;
+  }
+}
+
+.form-control-icon-left {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.75rem;
+  height: 20px;
+  width: 20px;
+  color: rgb(143, 143, 143);
+  @include transition(color);
+
+  &.black {
+    color: black;
+  }
+}
+
+// scrollbar
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $grey;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lighten($grey, 15%);
+}

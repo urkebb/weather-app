@@ -1,0 +1,58 @@
+@import "../../../styles/partials/variables";
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: 300ms visibility cubic-bezier(0.075, 0.82, 0.165, 1);
+  overflow: hidden;
+
+  &-content {
+    position: absolute;
+    max-width: 95%;
+    min-width: 500px;
+
+    &__show {
+      animation-name: show-modal;
+      animation-duration: 150ms;
+      animation-timing-function: linear;
+    }
+
+    &__card {
+      padding: 0;
+
+      &-header {
+        background: $error;
+        color: white;
+        border-radius: $card-br $card-br 0 0;
+        padding: 1rem;
+      }
+
+      &-body {
+        padding: 2rem 1rem 1rem 1rem;
+        border-radius: 0 0 $card-br $card-br;
+
+        &__message {
+          margin-bottom: 2rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes show-modal {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
